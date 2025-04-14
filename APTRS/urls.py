@@ -9,7 +9,7 @@ from django.conf import settings
 from django.conf.urls.static import serve
 from django.contrib import admin
 from django.views.generic import TemplateView
-from .. import swagger_urls
+from . import swagger_urls
 
 urlpatterns = [
     path('api/project/',include('project.urls')),

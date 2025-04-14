@@ -36,7 +36,8 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = loads(os.getenv('ALLOWED_HOST', '[]'))
+ALLOWED_HOSTS = ['your-subdomain.onrender.com']
+
 
 WHITELIST_IP = loads(os.getenv('WHITELIST_IP', '[]'))
 

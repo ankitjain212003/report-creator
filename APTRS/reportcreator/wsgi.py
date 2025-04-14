@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.1/howto/deployment/wsgi/
 
 import os
 from django.core.wsgi import get_wsgi_application
-from .init import current_version
+from ..init import current_version
 
 
 BANNER, COPYRIGHT = current_version()

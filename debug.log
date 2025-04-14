@@ -1,0 +1,396 @@
+[ERROR] 14/Apr/2025 10:11:25 - Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: index.html
+[ERROR] 14/Apr/2025 10:11:25 - Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: index.html
+[ERROR] 14/Apr/2025 10:11:25 - "GET / HTTP/1.1" 500 111644
+[ERROR] 14/Apr/2025 10:11:25 - "GET / HTTP/1.1" 500 111644
+[WARNING] 14/Apr/2025 10:11:25 - Not Found: /favicon.ico
+[WARNING] 14/Apr/2025 10:11:25 - Not Found: /favicon.ico
+[WARNING] 14/Apr/2025 10:11:25 - "GET /favicon.ico HTTP/1.1" 404 16746
+[WARNING] 14/Apr/2025 10:11:25 - "GET /favicon.ico HTTP/1.1" 404 16746
+[WARNING] 14/Apr/2025 10:11:39 - Not Found: /auth
+[WARNING] 14/Apr/2025 10:11:39 - Not Found: /auth
+[WARNING] 14/Apr/2025 10:11:39 - "GET /auth HTTP/1.1" 404 16718
+[WARNING] 14/Apr/2025 10:11:39 - "GET /auth HTTP/1.1" 404 16718
+[WARNING] 14/Apr/2025 10:11:56 - Not Found: /auth
+[WARNING] 14/Apr/2025 10:11:56 - Not Found: /auth
+[WARNING] 14/Apr/2025 10:11:56 - "GET /auth HTTP/1.1" 404 16718
+[WARNING] 14/Apr/2025 10:11:56 - "GET /auth HTTP/1.1" 404 16718
+[WARNING] 14/Apr/2025 10:12:08 - Not Found: /api/project/
+[WARNING] 14/Apr/2025 10:12:08 - Not Found: /api/project/
+[WARNING] 14/Apr/2025 10:12:08 - "GET /api/project/ HTTP/1.1" 404 26599
+[WARNING] 14/Apr/2025 10:12:08 - "GET /api/project/ HTTP/1.1" 404 26599
+[WARNING] 14/Apr/2025 10:12:36 - Not Found: /api/project/ get-projects/
+[WARNING] 14/Apr/2025 10:12:36 - Not Found: /api/project/ get-projects/
+[WARNING] 14/Apr/2025 10:12:36 - "GET /api/project/%20get-projects/ HTTP/1.1" 404 26659
+[WARNING] 14/Apr/2025 10:12:36 - "GET /api/project/%20get-projects/ HTTP/1.1" 404 26659
+[ERROR] 14/Apr/2025 10:13:03 - Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: index.html
+[ERROR] 14/Apr/2025 10:13:03 - Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: index.html
+[ERROR] 14/Apr/2025 10:13:03 - "GET / HTTP/1.1" 500 112269
+[ERROR] 14/Apr/2025 10:13:03 - "GET / HTTP/1.1" 500 112269
+[WARNING] 14/Apr/2025 10:18:13 - Not Found: /api/test/
+[WARNING] 14/Apr/2025 10:18:13 - Not Found: /api/test/
+[WARNING] 14/Apr/2025 10:18:13 - "GET /api/test/ HTTP/1.1" 404 16738
+[WARNING] 14/Apr/2025 10:18:13 - "GET /api/test/ HTTP/1.1" 404 16738
+[WARNING] 14/Apr/2025 10:28:54 - Not Found: /api/config/test/
+[WARNING] 14/Apr/2025 10:28:54 - Not Found: /api/config/test/
+[WARNING] 14/Apr/2025 10:28:54 - "GET /api/config/test/ HTTP/1.1" 404 18514
+[WARNING] 14/Apr/2025 10:28:54 - "GET /api/config/test/ HTTP/1.1" 404 18514
+[ERROR] 14/Apr/2025 10:31:32 - Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: index.html
+[ERROR] 14/Apr/2025 10:31:32 - Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: index.html
+[ERROR] 14/Apr/2025 10:31:32 - "GET / HTTP/1.1" 500 112942
+[ERROR] 14/Apr/2025 10:31:32 - "GET / HTTP/1.1" 500 112942
+[WARNING] 14/Apr/2025 10:55:51 - Not Found: /api/states/
+[WARNING] 14/Apr/2025 10:55:51 - Not Found: /api/states/
+[WARNING] 14/Apr/2025 10:55:51 - "GET /api/states/ HTTP/1.1" 404 16746
+[WARNING] 14/Apr/2025 10:55:51 - "GET /api/states/ HTTP/1.1" 404 16746
+[WARNING] 14/Apr/2025 10:59:14 - Not Found: /api/states/
+[WARNING] 14/Apr/2025 10:59:14 - Not Found: /api/states/
+[WARNING] 14/Apr/2025 10:59:14 - "GET /api/states/ HTTP/1.1" 404 16746
+[WARNING] 14/Apr/2025 10:59:14 - "GET /api/states/ HTTP/1.1" 404 16746
+[WARNING] 14/Apr/2025 11:07:44 - Not Found: /api/states/
+[WARNING] 14/Apr/2025 11:07:44 - Not Found: /api/states/
+[WARNING] 14/Apr/2025 11:07:44 - "GET /api/states/ HTTP/1.1" 404 16746
+[WARNING] 14/Apr/2025 11:07:44 - "GET /api/states/ HTTP/1.1" 404 16746
+[ERROR] 14/Apr/2025 11:31:00 - Internal Server Error: /api/states/
+Traceback (most recent call last):
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django_redis\cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django_redis\cache.py", line 99, in _get
+    return self.client.get(key, default=default, version=version, client=client)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django_redis\client\default.py", line 260, in get
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\rest_framework\views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\rest_framework\views.py", line 422, in initial
+    self.check_throttles(request)
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\rest_framework\views.py", line 365, in check_throttles
+    if not throttle.allow_request(request, self):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\rest_framework\throttling.py", line 123, in allow_request
+    self.history = self.cache.get(self.key, [])
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\debug_toolbar\panels\cache.py", line 42, in wrapper
+    return panel._record_call(cache, name, original_method, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\debug_toolbar\panels\cache.py", line 151, in _record_call
+    value = original_method(*args, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django_redis\cache.py", line 92, in get
+    value = self._get(key, default, version, client)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django_redis\cache.py", line 36, in _decorator
+    raise e.__cause__
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django_redis\client\default.py", line 258, in get
+    value = client.get(key)
+            ^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\redis\commands\core.py", line 1822, in get
+    return self.execute_command("GET", name, keys=[name])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\redis\client.py", line 559, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\redis\client.py", line 565, in _execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\redis\connection.py", line 1422, in get_connection
+    connection.connect()
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\redis\connection.py", line 363, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+[ERROR] 14/Apr/2025 11:31:00 - Internal Server Error: /api/states/
+Traceback (most recent call last):
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django_redis\cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django_redis\cache.py", line 99, in _get
+    return self.client.get(key, default=default, version=version, client=client)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django_redis\client\default.py", line 260, in get
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\rest_framework\views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\rest_framework\views.py", line 422, in initial
+    self.check_throttles(request)
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\rest_framework\views.py", line 365, in check_throttles
+    if not throttle.allow_request(request, self):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\rest_framework\throttling.py", line 123, in allow_request
+    self.history = self.cache.get(self.key, [])
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\debug_toolbar\panels\cache.py", line 42, in wrapper
+    return panel._record_call(cache, name, original_method, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\debug_toolbar\panels\cache.py", line 151, in _record_call
+    value = original_method(*args, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django_redis\cache.py", line 92, in get
+    value = self._get(key, default, version, client)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django_redis\cache.py", line 36, in _decorator
+    raise e.__cause__
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django_redis\client\default.py", line 258, in get
+    value = client.get(key)
+            ^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\redis\commands\core.py", line 1822, in get
+    return self.execute_command("GET", name, keys=[name])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\redis\client.py", line 559, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\redis\client.py", line 565, in _execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\redis\connection.py", line 1422, in get_connection
+    connection.connect()
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\redis\connection.py", line 363, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+[ERROR] 14/Apr/2025 11:31:00 - "GET /api/states/ HTTP/1.1" 500 193611
+[ERROR] 14/Apr/2025 11:31:00 - "GET /api/states/ HTTP/1.1" 500 193611
+[WARNING] 14/Apr/2025 11:33:48 - Not Found: /api/states/rajasthan
+[WARNING] 14/Apr/2025 11:33:48 - Not Found: /api/states/rajasthan
+[WARNING] 14/Apr/2025 11:33:48 - "GET /api/states/rajasthan HTTP/1.1" 404 17344
+[WARNING] 14/Apr/2025 11:33:48 - "GET /api/states/rajasthan HTTP/1.1" 404 17344
+[ERROR] 14/Apr/2025 13:04:36 - Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: index.html
+[ERROR] 14/Apr/2025 13:04:36 - Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuestUser.DRCBS-SANJAYK\Desktop\APTRS\venv\Lib\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: index.html
+[ERROR] 14/Apr/2025 13:04:36 - "GET / HTTP/1.1" 500 112942
+[ERROR] 14/Apr/2025 13:04:36 - "GET / HTTP/1.1" 500 112942
+[ERROR] 14/Apr/2025 17:32:03 - Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: index.html
+[ERROR] 14/Apr/2025 17:32:03 - Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: index.html
+[ERROR] 14/Apr/2025 17:32:03 - "GET / HTTP/1.1" 500 109631
+[ERROR] 14/Apr/2025 17:32:03 - "GET / HTTP/1.1" 500 109631
+[WARNING] 14/Apr/2025 17:32:03 - Not Found: /favicon.ico
+[WARNING] 14/Apr/2025 17:32:03 - Not Found: /favicon.ico
+[WARNING] 14/Apr/2025 17:32:03 - "GET /favicon.ico HTTP/1.1" 404 17424
+[WARNING] 14/Apr/2025 17:32:03 - "GET /favicon.ico HTTP/1.1" 404 17424

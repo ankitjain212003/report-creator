@@ -690,3 +690,11 @@ django.template.exceptions.TemplateDoesNotExist: index.html
 [WARNING] 15/Apr/2025 13:07:09 - Method Not Allowed: /api/auth/login/
 [WARNING] 15/Apr/2025 13:07:09 - "GET /api/auth/login/ HTTP/1.1" 405 40
 [WARNING] 15/Apr/2025 13:07:09 - "GET /api/auth/login/ HTTP/1.1" 405 40
+[WARNING] 15/Apr/2025 14:19:15 - Method Not Allowed: /api/auth/login/
+[WARNING] 15/Apr/2025 14:19:15 - Method Not Allowed: /api/auth/login/
+[WARNING] 15/Apr/2025 14:19:15 - "GET /api/auth/login/ HTTP/1.1" 405 40
+[WARNING] 15/Apr/2025 14:19:15 - "GET /api/auth/login/ HTTP/1.1" 405 40
+[WARNING] 15/Apr/2025 14:19:18 - Method Not Allowed: /api/auth/login/
+[WARNING] 15/Apr/2025 14:19:18 - Method Not Allowed: /api/auth/login/
+[WARNING] 15/Apr/2025 14:19:18 - "GET /api/auth/login/ HTTP/1.1" 405 40
+[WARNING] 15/Apr/2025 14:19:18 - "GET /api/auth/login/ HTTP/1.1" 405 40

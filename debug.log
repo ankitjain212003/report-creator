@@ -749,3 +749,49 @@ django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000
 [WARNING] 15/Apr/2025 15:18:36 - Bad Request: /swagger/
 [WARNING] 15/Apr/2025 15:18:36 - "GET /swagger/ HTTP/1.1" 400 86731
 [WARNING] 15/Apr/2025 15:18:36 - "GET /swagger/ HTTP/1.1" 400 86731
+[DEBUG] 15/Apr/2025 15:20:46 - Access token from cookie: None
+[WARNING] 15/Apr/2025 15:20:46 - Forbidden: /swagger/
+[WARNING] 15/Apr/2025 15:20:46 - Forbidden: /swagger/
+[WARNING] 15/Apr/2025 15:20:46 - "GET /swagger/ HTTP/1.1" 403 13
+[WARNING] 15/Apr/2025 15:20:46 - "GET /swagger/ HTTP/1.1" 403 13
+[DEBUG] 15/Apr/2025 15:20:52 - Access token from cookie: None
+[WARNING] 15/Apr/2025 15:20:52 - Forbidden: /swagger/
+[WARNING] 15/Apr/2025 15:20:52 - Forbidden: /swagger/
+[WARNING] 15/Apr/2025 15:20:52 - "GET /swagger/ HTTP/1.1" 403 13
+[WARNING] 15/Apr/2025 15:20:52 - "GET /swagger/ HTTP/1.1" 403 13
+[ERROR] 15/Apr/2025 15:21:18 - Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\utils\deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+[ERROR] 15/Apr/2025 15:21:18 - Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\utils\deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+[WARNING] 15/Apr/2025 15:21:18 - Bad Request: /swagger/
+[WARNING] 15/Apr/2025 15:21:18 - Bad Request: /swagger/
+[WARNING] 15/Apr/2025 15:21:18 - "GET /swagger/ HTTP/1.1" 400 86731
+[WARNING] 15/Apr/2025 15:21:18 - "GET /swagger/ HTTP/1.1" 400 86731
+[DEBUG] 15/Apr/2025 15:22:51 - Access token from cookie: None
+[WARNING] 15/Apr/2025 15:22:51 - Forbidden: /swagger/
+[WARNING] 15/Apr/2025 15:22:51 - Forbidden: /swagger/
+[WARNING] 15/Apr/2025 15:22:51 - "GET /swagger/ HTTP/1.1" 403 13
+[WARNING] 15/Apr/2025 15:22:51 - "GET /swagger/ HTTP/1.1" 403 13
+[DEBUG] 15/Apr/2025 15:22:55 - Access token from cookie: None
+[WARNING] 15/Apr/2025 15:22:55 - Forbidden: /swagger/
+[WARNING] 15/Apr/2025 15:22:55 - Forbidden: /swagger/
+[WARNING] 15/Apr/2025 15:22:55 - "GET /swagger/ HTTP/1.1" 403 13
+[WARNING] 15/Apr/2025 15:22:55 - "GET /swagger/ HTTP/1.1" 403 13

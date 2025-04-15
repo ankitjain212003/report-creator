@@ -36,7 +36,8 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+
 
 
 WHITELIST_IP = loads(os.getenv('WHITELIST_IP', '[]'))
@@ -50,13 +51,8 @@ https://pypi.org/project/django-cors-headers/ for more examples to configure it
 Remove the CORS_ORIGIN_ALLOW_ALL = True
 
 Use this instead with appropriate domain/ip:port and protocol
-
+CORS_ALLOWED_ORIGINS = ["https://example.com","http://127.0.0.1:9000"]  os.getenv('CORS_ORIGIN')
 '''
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",
-    "http://127.0.0.1:9000"
-]
-
 CORS_ORIGIN_ALLOW_ALL = True
 
 

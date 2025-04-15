@@ -1,35 +1,19 @@
-from rest_framework.authentication import BaseAuthentication
-from rest_framework.exceptions import AuthenticationFailed
-from django.contrib.auth import get_user_model
-import logging
+# cookieapp/authenticate.py
+from rest_framework_simplejwt.authentication import JWTAuthentication
+from django.conf import settings
 
-logger = logging.getLogger(__name__)
 
-class CustomAuthentication(BaseAuthentication):
+
+class CustomAuthentication(JWTAuthentication):
     def authenticate(self, request):
-        token = request.COOKIES.get('access_token')
-        logger.debug(f"Access token from cookie: {token}")
+        header = self.get_header(request)
 
-        if not token:
-            raise AuthenticationFailed('No access token found in cookies')
+        if header is None:
+            raw_token = request.COOKIES.get(settings.SIMPLE_JWT['AUTH_COOKIE']) or None
+        else:
+            raw_token = self.get_raw_token(header)
+        if raw_token is None:
+            return None
 
-        try:
-            # If you're using JWT decoding here:
-            import jwt
-            from django.conf import settings
-
-            payload = jwt.decode(token, settings.SECRET_KEY, algorithms=["HS256"])
-            user = get_user_model().objects.get(id=payload['user_id'])
-            return (user, None)
-
-        except jwt.ExpiredSignatureError:
-            logger.warning("Token has expired")
-            raise AuthenticationFailed('Token has expired')
-        except jwt.DecodeError:
-            logger.warning("Token decode failed")
-            raise AuthenticationFailed('Invalid token')
-        except get_user_model().DoesNotExist:
-            logger.warning("User not found from token")
-            raise AuthenticationFailed('No such user')
-
-        return None
+        validated_token = self.get_validated_token(raw_token)
+        return self.get_user(validated_token), validated_token

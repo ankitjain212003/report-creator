@@ -89,10 +89,12 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
     Note:
     - The associated groups and permissions are fetched based on the user's groups.
     """
-
+    
 
     def validate(self, attrs):
         data = super().validate(attrs)
+        print("EMAIL:", attrs.get('email'))
+        print("PASSWORD:", attrs.get('password'))
 
         if not self.user.is_staff:
             raise serializers.ValidationError("Only staff users are allowed to login.")

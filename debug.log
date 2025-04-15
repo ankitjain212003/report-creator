@@ -805,3 +805,11 @@ django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000
 [WARNING] 15/Apr/2025 16:01:11 - Not Found: /swagger/admin
 [WARNING] 15/Apr/2025 16:01:11 - "GET /swagger/admin HTTP/1.1" 404 17432
 [WARNING] 15/Apr/2025 16:01:11 - "GET /swagger/admin HTTP/1.1" 404 17432
+[WARNING] 15/Apr/2025 16:05:46 - Session data corrupted
+[WARNING] 15/Apr/2025 16:05:46 - Session data corrupted
+[WARNING] 15/Apr/2025 16:05:46 - Session data corrupted
+[WARNING] 15/Apr/2025 16:05:46 - Session data corrupted
+[WARNING] 15/Apr/2025 16:05:46 - Session data corrupted
+[WARNING] 15/Apr/2025 16:05:46 - Session data corrupted
+[WARNING] 15/Apr/2025 16:06:11 - Session data corrupted
+[WARNING] 15/Apr/2025 16:06:11 - Session data corrupted

@@ -31,11 +31,9 @@ class Projectserializers(serializers.ModelSerializer):
         fields = ('id','name', 'description', 'projecttype', 'startdate','enddate','testingtype','projectexception','status','owner','companyname')
 
     def to_representation(self, instance):
-        rep = super(Projectserializers, self).to_representation(instance)
-        rep['companyname'] = instance.companyname.name
-        rep['owner'] = [user.username for user in instance.owner.all()]
-
-        return rep
+     rep = super().to_representation(instance)
+     rep['companyname'] = instance.companyname.name if instance.companyname else None
+     return rep
 
     def get_user_permissions(self, user):
         # Fetching permissions associated with user's groups

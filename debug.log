@@ -394,3 +394,211 @@ django.template.exceptions.TemplateDoesNotExist: index.html
 [WARNING] 14/Apr/2025 17:32:03 - Not Found: /favicon.ico
 [WARNING] 14/Apr/2025 17:32:03 - "GET /favicon.ico HTTP/1.1" 404 17424
 [WARNING] 14/Apr/2025 17:32:03 - "GET /favicon.ico HTTP/1.1" 404 17424
+[ERROR] 15/Apr/2025 09:36:27 - Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\utils\deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+[ERROR] 15/Apr/2025 09:36:27 - Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\utils\deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+[WARNING] 15/Apr/2025 09:36:27 - Bad Request: /swagger
+[WARNING] 15/Apr/2025 09:36:27 - Bad Request: /swagger
+[WARNING] 15/Apr/2025 09:36:27 - "GET /swagger HTTP/1.1" 400 86331
+[WARNING] 15/Apr/2025 09:36:27 - "GET /swagger HTTP/1.1" 400 86331
+[ERROR] 15/Apr/2025 09:36:27 - Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\utils\deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+[ERROR] 15/Apr/2025 09:36:27 - Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\utils\deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+[WARNING] 15/Apr/2025 09:36:27 - Bad Request: /favicon.ico
+[WARNING] 15/Apr/2025 09:36:27 - Bad Request: /favicon.ico
+[WARNING] 15/Apr/2025 09:36:27 - "GET /favicon.ico HTTP/1.1" 400 86186
+[WARNING] 15/Apr/2025 09:36:27 - "GET /favicon.ico HTTP/1.1" 400 86186
+[ERROR] 15/Apr/2025 09:36:31 - Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\utils\deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+[ERROR] 15/Apr/2025 09:36:31 - Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\utils\deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+[WARNING] 15/Apr/2025 09:36:31 - Bad Request: /swagger
+[WARNING] 15/Apr/2025 09:36:31 - Bad Request: /swagger
+[WARNING] 15/Apr/2025 09:36:31 - "GET /swagger HTTP/1.1" 400 86468
+[WARNING] 15/Apr/2025 09:36:31 - "GET /swagger HTTP/1.1" 400 86468
+[ERROR] 15/Apr/2025 09:36:31 - Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\utils\deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+[ERROR] 15/Apr/2025 09:36:31 - Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\utils\deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+[WARNING] 15/Apr/2025 09:36:31 - Bad Request: /favicon.ico
+[WARNING] 15/Apr/2025 09:36:31 - Bad Request: /favicon.ico
+[WARNING] 15/Apr/2025 09:36:31 - "GET /favicon.ico HTTP/1.1" 400 86186
+[WARNING] 15/Apr/2025 09:36:31 - "GET /favicon.ico HTTP/1.1" 400 86186
+[ERROR] 15/Apr/2025 09:36:49 - Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\utils\deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+[ERROR] 15/Apr/2025 09:36:49 - Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\utils\deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+[WARNING] 15/Apr/2025 09:36:50 - Bad Request: /
+[WARNING] 15/Apr/2025 09:36:50 - Bad Request: /
+[WARNING] 15/Apr/2025 09:36:50 - "GET / HTTP/1.1" 400 86370
+[WARNING] 15/Apr/2025 09:36:50 - "GET / HTTP/1.1" 400 86370
+[ERROR] 15/Apr/2025 09:36:50 - Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\utils\deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+[ERROR] 15/Apr/2025 09:36:50 - Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\utils\deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+[WARNING] 15/Apr/2025 09:36:50 - Bad Request: /favicon.ico
+[WARNING] 15/Apr/2025 09:36:50 - Bad Request: /favicon.ico
+[WARNING] 15/Apr/2025 09:36:50 - "GET /favicon.ico HTTP/1.1" 400 86179
+[WARNING] 15/Apr/2025 09:36:50 - "GET /favicon.ico HTTP/1.1" 400 86179
+[ERROR] 15/Apr/2025 09:37:05 - Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\utils\deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+[ERROR] 15/Apr/2025 09:37:05 - Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\utils\deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+[WARNING] 15/Apr/2025 09:37:05 - Bad Request: /swagger
+[WARNING] 15/Apr/2025 09:37:05 - Bad Request: /swagger
+[WARNING] 15/Apr/2025 09:37:05 - "GET /swagger HTTP/1.1" 400 86331
+[WARNING] 15/Apr/2025 09:37:05 - "GET /swagger HTTP/1.1" 400 86331
+[ERROR] 15/Apr/2025 09:37:05 - Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\utils\deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+[ERROR] 15/Apr/2025 09:37:05 - Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\utils\deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\drcbs\OneDrive\Desktop\APTRS\venv\Lib\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+[WARNING] 15/Apr/2025 09:37:05 - Bad Request: /favicon.ico
+[WARNING] 15/Apr/2025 09:37:05 - Bad Request: /favicon.ico
+[WARNING] 15/Apr/2025 09:37:05 - "GET /favicon.ico HTTP/1.1" 400 86186
+[WARNING] 15/Apr/2025 09:37:05 - "GET /favicon.ico HTTP/1.1" 400 86186

@@ -698,3 +698,8 @@ django.template.exceptions.TemplateDoesNotExist: index.html
 [WARNING] 15/Apr/2025 14:19:18 - Method Not Allowed: /api/auth/login/
 [WARNING] 15/Apr/2025 14:19:18 - "GET /api/auth/login/ HTTP/1.1" 405 40
 [WARNING] 15/Apr/2025 14:19:18 - "GET /api/auth/login/ HTTP/1.1" 405 40
+[DEBUG] 15/Apr/2025 15:09:53 - Access token from cookie: None
+[WARNING] 15/Apr/2025 15:09:53 - Forbidden: /swagger/
+[WARNING] 15/Apr/2025 15:09:53 - Forbidden: /swagger/
+[WARNING] 15/Apr/2025 15:09:53 - "GET /swagger/ HTTP/1.1" 403 13
+[WARNING] 15/Apr/2025 15:09:53 - "GET /swagger/ HTTP/1.1" 403 13

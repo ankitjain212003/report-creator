@@ -54,6 +54,10 @@ Remove the CORS_ORIGIN_ALLOW_ALL = True
 Use this instead with appropriate domain/ip:port and protocol
 CORS_ALLOWED_ORIGINS = ["https://example.com","http://127.0.0.1:9000"]  os.getenv('CORS_ORIGIN')
 '''
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",  # your React Vite frontend
+]
+
 CORS_ORIGIN_ALLOW_ALL = True
 
 
@@ -413,24 +417,26 @@ LOGIN_URL= '/accounts/login'
 
 
 SIMPLE_JWT = {
-'ACCESS_TOKEN_LIFETIME': timedelta(minutes=30),
-'REFRESH_TOKEN_LIFETIME': timedelta(minutes=60),
-'ROTATE_REFRESH_TOKENS': True,
-'BLACKLIST_AFTER_ROTATION': True,
-'ALGORITHM': 'HS256',
-'SIGNING_KEY': os.getenv('SECRET_KEY'),
-'VERIFYING_KEY': None,
-'AUTH_HEADER_TYPES': ('Bearer',),
-'USER_ID_FIELD': 'id',
-'USER_ID_CLAIM': 'user_id',
-'AUTH_TOKEN_CLASSES': ('rest_framework_simplejwt.tokens.AccessToken',),
-'TOKEN_TYPE_CLAIM': 'token_type',
-'AUTH_COOKIE': 'access_token',  # Cookie name. Enables cookies if value is set.
-  'AUTH_COOKIE_DOMAIN': None,     # A string like "example.com", or None for standard domain cookie.
-  'AUTH_COOKIE_SECURE': True,    # Whether the auth cookies should be secure (https:// only).
-  'AUTH_COOKIE_HTTP_ONLY' : True, # Http only cookie flag.It's not fetch by javascript.
-  'AUTH_COOKIE_PATH': '/',        # The path of the auth cookie.
-  'AUTH_COOKIE_SAMESITE': 'Lax',
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=30),
+    'REFRESH_TOKEN_LIFETIME': timedelta(minutes=60),
+    'ROTATE_REFRESH_TOKENS': True,
+    'BLACKLIST_AFTER_ROTATION': True,
+    'ALGORITHM': 'HS256',
+    'SIGNING_KEY': os.getenv('SECRET_KEY'),
+    'VERIFYING_KEY': None,
+    'AUTH_HEADER_TYPES': ('Bearer',),
+    'USER_ID_FIELD': 'id',
+    'USER_ID_CLAIM': 'user_id',
+    'AUTH_TOKEN_CLASSES': ('rest_framework_simplejwt.tokens.AccessToken',),
+    'TOKEN_TYPE_CLAIM': 'token_type',
+
+    # Cookie-based JWT
+    'AUTH_COOKIE': 'access_token',
+    'AUTH_COOKIE_DOMAIN': None,
+    'AUTH_COOKIE_SECURE': True,
+    'AUTH_COOKIE_HTTP_ONLY': True,
+    'AUTH_COOKIE_PATH': '/',
+    'AUTH_COOKIE_SAMESITE': 'None',
 }
 
 

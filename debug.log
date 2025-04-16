@@ -871,3 +871,7 @@ django.template.exceptions.TemplateDoesNotExist: index.html
 [WARNING] 16/Apr/2025 11:16:09 - Unauthorized: /api/project/report/1/
 [WARNING] 16/Apr/2025 11:16:09 - "GET /api/project/report/1/ HTTP/1.1" 401 58
 [WARNING] 16/Apr/2025 11:16:09 - "GET /api/project/report/1/ HTTP/1.1" 401 58
+[WARNING] 16/Apr/2025 13:17:22 - Not Found: /swagger/admin/
+[WARNING] 16/Apr/2025 13:17:22 - Not Found: /swagger/admin/
+[WARNING] 16/Apr/2025 13:17:22 - "GET /swagger/admin/ HTTP/1.1" 404 17436
+[WARNING] 16/Apr/2025 13:17:22 - "GET /swagger/admin/ HTTP/1.1" 404 17436

@@ -110,7 +110,8 @@ def generate_vulnerability_document(pk,Report_type,standard):
         doc = main_doc_style(doc)
         response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.wordprocessingml.document')
         response['Content-Disposition'] = f'attachment; filename={project.name}vulnerability_report.docx'
-        doc.save(response)
+        doc.save("report.docx")  # Save directly to a file
+
         return response
     
     except Exception as e:

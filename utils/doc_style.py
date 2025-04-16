@@ -82,23 +82,12 @@ def main_doc_style(doc):
  list_style_name = 'List Bullet'
 
 # Check if 'List Bullet' style exists in the document
- if list_style_name in [s.name for s in doc.styles if s.type == WD_STYLE_TYPE.PARAGRAPH]:
-    font = doc.styles[list_style_name].font
- else:
-    # Fallback to 'Normal' if 'List Bullet' is missing
-    font = doc.styles['Normal'].font
-    font.name = 'Times New Roman'
-    font.size = Pt(16)
-    section = doc.sections[1]
-    section.top_margin = Inches(1)
-    section.bottom_margin = Inches(1)
-    for table in doc.tables:
-        for row in table.rows:
-            if all(cell.text.strip() == "" for cell in row.cells):
-                row_element = row._element
-                row_element.getparent().remove(row_element)
-            else:
-                # Set row height to fit content
-                row.height = None  # Automatic height
-                row.height_rule = None  # Automatically adjust height
+def main_doc_style(doc):
+    if len(doc.sections) < 2:
+        section = doc.sections[0]  # fallback to the only section
+    else:
+        section = doc.sections[1]  # original line
+
+    # You can now apply style changes safely
+    section.top_margin = ...
     return doc

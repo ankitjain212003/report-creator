@@ -4,7 +4,6 @@ from docx import Document
 import io
 from lib.htmldocx import HtmlToDocx
 import logging
-from docx.enum.style import WD_STYLE_TYPE
 
 logger = logging.getLogger(__name__)
 
@@ -78,13 +77,19 @@ def get_subdoc(doc,raw_html, headers, base_url):
         return subdoc
 
 def main_doc_style(doc):
-  def main_doc_style(doc):
-    section = doc.sections[0]  # Safe fallback
-
-    # Set margins (1 inch on all sides)
+    font = doc.styles['List Bullet'].font
+    font.name = 'Times New Roman'
+    font.size = Pt(16)
+    section = doc.sections[1]
     section.top_margin = Inches(1)
     section.bottom_margin = Inches(1)
-    section.left_margin = Inches(1)
-    section.right_margin = Inches(1)
-
+    for table in doc.tables:
+        for row in table.rows:
+            if all(cell.text.strip() == "" for cell in row.cells):
+                row_element = row._element
+                row_element.getparent().remove(row_element)
+            else:
+                # Set row height to fit content
+                row.height = None  # Automatic height
+                row.height_rule = None  # Automatically adjust height
     return doc

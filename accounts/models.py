@@ -20,7 +20,7 @@ class CustomGroup(models.Model):
     description = models.CharField(max_length=150, null=True, blank=True)
 
     def __str__(self):
-        return self.group.name or self.description
+        return self.name or self.description
 
 class CustomUserManager(BaseUserManager):
     """Custom manager for CustomUser model."""

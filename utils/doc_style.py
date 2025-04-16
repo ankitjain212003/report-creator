@@ -78,8 +78,15 @@ def get_subdoc(doc,raw_html, headers, base_url):
         return subdoc
 
 def main_doc_style(doc):
-   
- list_style_name = 'List Bullet'
+    section = doc.sections[0]  # Safe fallback
+
+    # Set margins (1 inch on all sides)
+    section.top_margin = Inches(1)
+    section.bottom_margin = Inches(1)
+    section.left_margin = Inches(1)
+    section.right_margin = Inches(1)
+
+list_style_name = 'List Bullet'
 
 # Check if 'List Bullet' style exists in the document
 def main_doc_style(doc):

@@ -114,13 +114,8 @@ class MinimumLengthValidator:
 
 
 def get_base_url(request=None):
-    """Generate and return the base URL based on settings and request."""
-    global base_url
-    if settings.USE_DOCKER == "True":
-        base_url = "https://nginx/"
+    """Generate and return the base URL based on request."""
+    if request:
+        return f"{request.scheme}://{request.get_host()}"
     else:
-        if request:
-            base_url = f"{request.scheme}://{request.get_host()}"
-        else:
-            raise Exception("Request is required when not using Docker.")
-    return base_url
+        raise Exception("Request object is required to generate base URL.")

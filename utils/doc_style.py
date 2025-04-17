@@ -4,6 +4,7 @@ from docx import Document
 import io
 from lib.htmldocx import HtmlToDocx
 import logging
+from docx.enum.style import WD_STYLE_TYPE
 
 logger = logging.getLogger(__name__)
 
@@ -77,7 +78,15 @@ def get_subdoc(doc,raw_html, headers, base_url):
         return subdoc
 
 def main_doc_style(doc):
-    font = doc.styles['List Bullet'].font
+   
+ list_style_name = 'List Bullet'
+
+# Check if 'List Bullet' style exists in the document
+ if list_style_name in [s.name for s in doc.styles if s.type == WD_STYLE_TYPE.PARAGRAPH]:
+    font = doc.styles[list_style_name].font
+ else:
+    # Fallback to 'Normal' if 'List Bullet' is missing
+    font = doc.styles['Normal'].font
     font.name = 'Times New Roman'
     font.size = Pt(16)
     section = doc.sections[1]

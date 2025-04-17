@@ -99,3 +99,7 @@ class CustomerSerializer(serializers.ModelSerializer):
 
 
         return super().update(instance, validated_data)
+class CompanySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Company
+        fields = '__all__'

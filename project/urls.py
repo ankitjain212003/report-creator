@@ -1,20 +1,20 @@
 from django.urls import path
 from .views import project, retest, vulnerability, image_upload, scope
 from .views.image_upload import GetImageView
-from project.views.workorder import WorkOrderViewSet, print_workorder  
+#from project.views.workorder import WorkOrderViewSet, print_workorder  
 from rest_framework.routers import DefaultRouter
 
-# WorkOrder Views for manual routing
-workorder_list = WorkOrderViewSet.as_view({
-    'get': 'list',
-    'post': 'create'
-})
-workorder_detail = WorkOrderViewSet.as_view({
-    'get': 'retrieve',
-    'put': 'update',
-    'patch': 'partial_update',
-    'delete': 'destroy'
-})
+# # WorkOrder Views for manual routing
+# workorder_list = WorkOrderViewSet.as_view({
+#     'get': 'list',
+#     'post': 'create'
+# })
+# workorder_detail = WorkOrderViewSet.as_view({
+#     'get': 'retrieve',
+#     'put': 'update',
+#     'patch': 'partial_update',
+#     'delete': 'destroy'
+# })
 
 urlpatterns = [
 
@@ -32,9 +32,9 @@ urlpatterns = [
     path('report/<str:pk>/', project.project_report, name="generate report"),
 
     ## WorkOrder (NEW)
-    path('workorder/', workorder_list, name='workorder-list'),
-    path('workorder/<int:pk>/', workorder_detail, name='workorder-detail'),
-    path('workorder/<int:pk>/print/', print_workorder, name='print_workorder'),
+    # path('workorder/', workorder_list, name='workorder-list'),
+    # path('workorder/<int:pk>/', workorder_detail, name='workorder-detail'),
+    # path('workorder/<int:pk>/print/', print_workorder, name='print_workorder'),
 
     # Scope
     path('scope/add/<str:pk>/', scope.projectaddscope, name="Add Project Scope"),

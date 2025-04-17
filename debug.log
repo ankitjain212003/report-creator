@@ -913,3 +913,7 @@ django.template.exceptions.TemplateDoesNotExist: index.html
 [WARNING] 17/Apr/2025 10:54:22 - Not Found: /favicon.ico
 [WARNING] 17/Apr/2025 10:54:22 - "GET /favicon.ico HTTP/1.1" 404 17728
 [WARNING] 17/Apr/2025 10:54:22 - "GET /favicon.ico HTTP/1.1" 404 17728
+[WARNING] 17/Apr/2025 11:35:52 - Unauthorized: /api/project/vulnerability/1/
+[WARNING] 17/Apr/2025 11:35:52 - Unauthorized: /api/project/vulnerability/1/
+[WARNING] 17/Apr/2025 11:35:52 - "GET /api/project/vulnerability/1/ HTTP/1.1" 401 58
+[WARNING] 17/Apr/2025 11:35:52 - "GET /api/project/vulnerability/1/ HTTP/1.1" 401 58

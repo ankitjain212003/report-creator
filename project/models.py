@@ -59,7 +59,10 @@ class Project(models.Model):
     contact_person_name = models.CharField(max_length=100, blank=True, null=True)
     contact_person_phone = models.CharField(max_length=15, blank=True, null=True)
     contact_person_email = models.EmailField(blank=True, null=True)
+    audit_organisation_name = models.ForeignKey(Company, on_delete=models.SET_NULL, blank=True, null=True, related_name='audit_projects')
+    website_detail = models.ForeignKey('PrjectScope', on_delete=models.SET_NULL, blank=True, null=True, related_name='website_projects')
     
+
     def clean(self):
         if self.enddate and self.enddate < self.startdate:
             raise ValidationError(_('End date cannot be earlier than start date'))
@@ -109,8 +112,6 @@ class Vulnerability(models.Model):
     created_by = models.ForeignKey(CustomUser, on_delete=models.SET_NULL, null=True, editable=False, related_name='vulnerability_created_by', to_field='id')
     last_updated_by = models.ForeignKey(CustomUser, on_delete=models.SET_NULL, null=True, related_name='vulnerability_last_updated_by', to_field='id')
     cwe = models.JSONField(null=True, blank=True)
-    audit_organisation_name = models.ForeignKey(Company, on_delete=models.SET_NULL, blank=True, null=True, related_name='audit_projects')
-    website_detail = models.ForeignKey('PrjectScope', on_delete=models.SET_NULL, blank=True, null=True, related_name='website_projects')
 
     class Meta:
         unique_together = (("project", "vulnerabilityname"),)

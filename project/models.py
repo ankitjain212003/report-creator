@@ -38,6 +38,10 @@ AUDIT_TYPE_CHOICES = [
     ('web_app', 'Web Application'),
     ('wireless', 'Wireless Security Audit'),
 ]
+AUDIT_MODE_CHOICES = [
+    ('on_site', 'On Site'),
+    ('office', 'Office'),
+]
 
 class Project(models.Model):
     name = models.CharField(max_length=100, unique=False, null=False, blank=False, default=None)
@@ -45,13 +49,17 @@ class Project(models.Model):
     description = models.TextField(null=False, blank=False, default=None, validators=[xss_validator])
     projecttype = models.CharField(max_length=100, null=False, blank=False, default=None)
     audit_type = models.CharField(max_length=50, choices=AUDIT_TYPE_CHOICES, blank=True, null=True)
+    audit_mode = models.CharField(max_length=20, choices=AUDIT_MODE_CHOICES, blank=True, null=True)
     startdate = models.DateField(default=timezone.now)
     enddate = models.DateField(null=True, blank=True)
     testingtype = models.CharField(max_length=100, null=False, blank=False, default="White Box")
     projectexception = models.TextField(null=True, blank=True, validators=[xss_validator])
     owner = models.ManyToManyField(CustomUser, blank=True)
     status = models.CharField(max_length=20, choices=PROJECT_STATUS_CHOICES)
-
+    contact_person_name = models.CharField(max_length=100, blank=True, null=True)
+    contact_person_phone = models.CharField(max_length=15, blank=True, null=True)
+    contact_person_email = models.EmailField(blank=True, null=True)
+    
     def clean(self):
         if self.enddate and self.enddate < self.startdate:
             raise ValidationError(_('End date cannot be earlier than start date'))

@@ -10,6 +10,7 @@ from django.conf.urls.static import serve
 from django.contrib import admin
 from django.views.generic import TemplateView
 from . import swagger_urls
+from django.urls import path, include
 
 urlpatterns = [
     path('api/project/',include('project.urls')),
@@ -19,6 +20,8 @@ urlpatterns = [
     path('api/config/', include('configapi.urls')),
     path('api/', include('location_api.urls')),
     path('', include(swagger_urls.urlpatterns)), 
+    path('admin/', admin.site.urls),
+    path('api/project/', include('project.urls')),
 
 ]
 

@@ -1,7 +1,11 @@
 from django.urls import path, include
 from .views import project, retest, vulnerability, image_upload, scope
 from .views.image_upload import GetImageView
+from project.views.workorder import WorkOrderViewSet
+from rest_framework.routers import DefaultRouter
+from project.views.workorder import WorkOrderViewSet, print_workorder  
 
+ 
 urlpatterns = [
 
     ## Project
@@ -51,4 +55,14 @@ urlpatterns = [
     path('ckeditor/imageupload/', image_upload.ImageUploadView.as_view(),),
     path('ckeditor/delete-images/', image_upload.delete_images, name='delete_images'),
     path('getimage/', GetImageView.as_view(), name='get_image'),
+]
+router = DefaultRouter()
+router.register(r'workorder', WorkOrderViewSet)
+
+urlpatterns = [
+    path('', include(router.urls)),
+]
+
+urlpatterns += [
+    path('workorder/<int:pk>/print/', print_workorder, name='print_workorder'),
 ]

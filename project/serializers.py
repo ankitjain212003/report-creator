@@ -4,7 +4,7 @@ from accounts.models import CustomUser
 from customers.models import Company
 from .models import (PrjectScope, Project, ProjectRetest, Vulnerability,
                      Vulnerableinstance)
-
+from .models import WorkOrder
 
 def validate_file_extension(value):
     allowed_extensions = ['jpg', 'jpeg', 'png']
@@ -274,4 +274,9 @@ class VulnerableinstanceSerializerNessus(serializers.ModelSerializer):
 
     class Meta:
         model = Vulnerableinstance
+        fields = '__all__'
+
+class WorkOrderSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = WorkOrder
         fields = '__all__'

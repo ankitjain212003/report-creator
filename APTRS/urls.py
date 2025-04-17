@@ -21,7 +21,7 @@ urlpatterns = [
     path('api/', include('location_api.urls')),
     path('', include(swagger_urls.urlpatterns)), 
     path('admin/', admin.site.urls),
-    path('api/project/', include('project.urls')),
+    
 
 ]
 

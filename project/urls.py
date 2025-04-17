@@ -1,11 +1,21 @@
-from django.urls import path, include
+from django.urls import path
 from .views import project, retest, vulnerability, image_upload, scope
 from .views.image_upload import GetImageView
-from project.views.workorder import WorkOrderViewSet
-from rest_framework.routers import DefaultRouter
 from project.views.workorder import WorkOrderViewSet, print_workorder  
+from rest_framework.routers import DefaultRouter
 
- 
+# WorkOrder Views for manual routing
+workorder_list = WorkOrderViewSet.as_view({
+    'get': 'list',
+    'post': 'create'
+})
+workorder_detail = WorkOrderViewSet.as_view({
+    'get': 'retrieve',
+    'put': 'update',
+    'patch': 'partial_update',
+    'delete': 'destroy'
+})
+
 urlpatterns = [
 
     ## Project
@@ -20,6 +30,11 @@ urlpatterns = [
     path('status/completed/<str:pk>/', project.complete_project_status),
     path('status/reopen/<str:pk>/', project.reopen_project_status),
     path('report/<str:pk>/', project.project_report, name="generate report"),
+
+    ## WorkOrder (NEW)
+    path('workorder/', workorder_list, name='workorder-list'),
+    path('workorder/<int:pk>/', workorder_detail, name='workorder-detail'),
+    path('workorder/<int:pk>/print/', print_workorder, name='print_workorder'),
 
     # Scope
     path('scope/add/<str:pk>/', scope.projectaddscope, name="Add Project Scope"),
@@ -55,14 +70,4 @@ urlpatterns = [
     path('ckeditor/imageupload/', image_upload.ImageUploadView.as_view(),),
     path('ckeditor/delete-images/', image_upload.delete_images, name='delete_images'),
     path('getimage/', GetImageView.as_view(), name='get_image'),
-]
-router = DefaultRouter()
-router.register(r'workorder', WorkOrderViewSet)
-
-urlpatterns = [
-    path('', include(router.urls)),
-]
-
-urlpatterns += [
-    path('workorder/<int:pk>/print/', print_workorder, name='print_workorder'),
 ]

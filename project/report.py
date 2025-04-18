@@ -25,11 +25,9 @@ import traceback
 
 from accounts.models import CustomUser, CustomGroup
 from customers.models import Company
-from .models import (PrjectScope, Project, ProjectRetest, Vulnerability,
-                     Vulnerableinstance)
+from .models import PrjectScope, Project, ProjectRetest, Vulnerability, Vulnerableinstance
 from utils.doc_style import get_subdoc, main_doc_style
 
-logger = logging.getLogger(__name__)
 logger = logging.getLogger('weasyprint')
 
 base_url = ""
@@ -43,6 +41,81 @@ def whitelisted_fetcher(url):
         return default_url_fetcher(url)
     raise ValueError(f"URL is Not WhiteListed for: '{url}'")
 
+
+def generate_pdf_report(rendered_content, base_url):
+    try:
+        pdf = HTML(string=rendered_content, url_fetcher=whitelisted_fetcher, base_url=base_url).write_pdf()
+        return HttpResponse(pdf, content_type='application/pdf')
+    except Exception as e:
+        logger.error("Something Went Wrong: %s", e)
+        return Response({"Status": "Failed", "Message": "Something Went Wrong"})
+
+
+def GetHTML(Report_type, pk, standard, request):
+    try:
+        project = Project.objects.get(pk=pk)
+        vuln = Vulnerability.objects.filter(project=project).order_by('-cvssscore')
+        instances = Vulnerableinstance.objects.filter(project=project)
+        project_manager_group = CustomGroup.objects.get(name='Project Manager')
+        projectmanagers = CustomUser.objects.filter(groups=project_manager_group)
+        customeruser = CustomUser.objects.filter(company=project.companyname, is_active=True)
+
+        ciritcal = vuln.filter(vulnerabilityseverity='Critical', status='Vulnerable').count()
+        high = vuln.filter(vulnerabilityseverity='High', status='Vulnerable').count()
+        medium = vuln.filter(vulnerabilityseverity='Medium', status='Vulnerable').count()
+        low = vuln.filter(vulnerabilityseverity='Low', status='Vulnerable').count()
+        info = vuln.filter(Q(status='Vulnerable') & Q(vulnerabilityseverity__in=['Informational', 'None'])).count()
+
+        custom_style = Style(
+            colors=("#FF491C", "#F66E09", "#FBBC02", "#20B803", "#3399FF"),
+            background='transparent',
+            plot_background='transparent',
+            legend_font_size=0,
+            legend_box_size=0,
+            value_font_size=40
+        )
+        pie_chart = pygal.Pie(style=custom_style)
+        pie_chart.add('Critical', ciritcal)
+        pie_chart.add('High', high)
+        pie_chart.add('Medium', medium)
+        pie_chart.add('Low', low)
+        pie_chart.add('Informational', info)
+
+        totalvulnerability = vuln.count()
+        mycomany = Company.objects.filter(internal=True).values_list('name', flat=True).first()
+        projectscope = PrjectScope.objects.filter(project=project)
+        totalretest = ProjectRetest.objects.filter(project_id=pk)
+
+        data = {
+            'projectscope': projectscope,
+            'totalvulnerability': totalvulnerability,
+            'standard': standard,
+            'Report_type': Report_type,
+            'mycomany': mycomany,
+            'totalretest': totalretest,
+            'vuln': vuln,
+            'project': project,
+            'ciritcal': ciritcal,
+            'high': high,
+            'medium': medium,
+            'low': low,
+            'info': info,
+            'instances': instances,
+            'projectmanagers': projectmanagers,
+            'customeruser': customeruser,
+            'pie_chart': pie_chart.render(is_unicode=True)
+        }
+
+        rendered_content = render_to_string('report.html', data, request=request)
+        response = generate_pdf_report(rendered_content, base_url)
+        response['Content-Disposition'] = f'attachment; filename={project.name}vulnerability_report.pdf'
+        return response
+
+    except Exception as e:
+        logger.error(f"An error occurred: {e}")
+        return Response({"Status": "Failed", "Message": "Something Went Wrong"})
+
+
 def CheckReport(Report_format, Report_type, pk, url, standard, request, access_token):
     global base_url
     base_url = url
@@ -55,6 +128,7 @@ def CheckReport(Report_format, Report_type, pk, url, standard, request, access_t
         return generate_vulnerability_document(pk, Report_type, standard)
     if Report_format == "pdf":
         return GetHTML(Report_type, pk, standard, request)
+
 
 def generate_vulnerability_document(pk, Report_type, standard):
     try:
@@ -114,8 +188,8 @@ def generate_vulnerability_document(pk, Report_type, standard):
         jinja_env.trim_blocks = True
         jinja_env.lstrip_blocks = True
         doc.render(context, jinja_env)
-        doc = main_doc_style(doc)
 
+        doc = main_doc_style(doc)
         response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.wordprocessingml.document')
         response['Content-Disposition'] = f'attachment; filename={project.name}vulnerability_report.docx'
         doc.save("report.docx")
@@ -125,12 +199,4 @@ def generate_vulnerability_document(pk, Report_type, standard):
     except Exception as e:
         logger.error(f"An error occurred: {e}")
         logger.error("Traceback: " + traceback.format_exc())
-        return Response({"Status": "Failed", "Message": "Something Went Wrong"})
-
-def generate_pdf_report(rendered_content, base_url):
-    try:
-        pdf = HTML(string=rendered_content, url_fetcher=whitelisted_fetcher, base_url=base_url).write_pdf()
-        return HttpResponse(pdf, content_type='application/pdf')
-    except Exception as e:
-        logger.error("Something Went Wrong: %s", e)
         return Response({"Status": "Failed", "Message": "Something Went Wrong"})

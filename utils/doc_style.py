@@ -89,7 +89,7 @@ def main_doc_style(doc):
     font = doc.styles['Normal'].font
     font.name = 'Times New Roman'
     font.size = Pt(16)
-    section = doc.sections[1]
+    section = doc.sections[0]
     section.top_margin = Inches(1)
     section.bottom_margin = Inches(1)
     for table in doc.tables:

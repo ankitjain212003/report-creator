@@ -54,13 +54,11 @@ def get_subdoc(doc,raw_html, headers, base_url):
                 font.name = 'Calibri'
                 #font.size = Pt(16)
 
+    if 'Normal' in temp_doc.styles:
+        temp_doc.styles['Normal'].font.name = 'Calibri'
 
-        font = temp_doc.styles['Normal'].font
-        font.name = 'Calibri'
-        #font.size = Pt(16)
-        font = temp_doc.styles['List Bullet'].font
-        font.name = 'Calibri'
-        #font.size = Pt(16)
+    if 'List Bullet' in temp_doc.styles:
+        temp_doc.styles['List Bullet'].font.name = 'Calibri'
 
 
         # Save temporary DOCX in memory

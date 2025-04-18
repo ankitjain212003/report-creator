@@ -27,7 +27,7 @@ class Projectserializers(serializers.ModelSerializer):
 
     class Meta:
         model = Project
-        fields = ('id','name', 'description', 'projecttype', 'startdate','enddate','testingtype','projectexception','status','owner','companyname')
+        fields = '__all__'
 
     def to_representation(self, instance):
      rep = super().to_representation(instance)

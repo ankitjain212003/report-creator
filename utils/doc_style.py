@@ -74,3 +74,4 @@ def main_doc_style(doc):
     except Exception as e:
         logger.error(f"main_doc_style error: {e}")
         return doc
+   

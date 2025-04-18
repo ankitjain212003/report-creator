@@ -52,7 +52,20 @@ class Project(models.Model):
     audit_mode = models.CharField(max_length=20, choices=AUDIT_MODE_CHOICES, blank=True, null=True)
     startdate = models.DateField(default=timezone.now)
     enddate = models.DateField(null=True, blank=True)
-    testingtype = models.CharField(max_length=100, null=False, blank=False, default="White Box")
+    TESTING_TYPE_CHOICES = [
+    ("White Box", "White Box"),
+    ("Black Box", "Black Box"),
+    ("Grey Box", "Grey Box"),
+]
+
+    testingtype = models.CharField(
+    max_length=100,
+    choices=TESTING_TYPE_CHOICES,
+    default="White Box",
+    null=False,
+    blank=False
+)
+
     projectexception = models.TextField(null=True, blank=True, validators=[xss_validator])
     owner = models.ManyToManyField(CustomUser, blank=True)
     status = models.CharField(max_length=20, choices=PROJECT_STATUS_CHOICES)

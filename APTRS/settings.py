@@ -41,7 +41,7 @@ ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'report-creator.onrender.com']
 
 
 
-WHITELIST_IP = loads(os.getenv('WHITELIST_IP', '[]'))
+WHITELIST_IP = loads(os.getenv('WHITELIST_IP', 'https://report-creator.onrender.com/static/css/report-vulnerabilities-summary.css]'))
 
 '''
 CORS Security settings

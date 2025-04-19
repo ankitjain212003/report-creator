@@ -1039,3 +1039,15 @@ Traceback (most recent call last):
 django.template.exceptions.TemplateDoesNotExist: index.html
 [ERROR] 18/Apr/2025 10:44:31 - "GET / HTTP/1.1" 500 112627
 [ERROR] 18/Apr/2025 10:44:31 - "GET / HTTP/1.1" 500 112627
+[WARNING] 19/Apr/2025 16:08:59 - Unauthorized: /api/project/ckeditor/imageupload/
+[WARNING] 19/Apr/2025 16:08:59 - Unauthorized: /api/project/ckeditor/imageupload/
+[WARNING] 19/Apr/2025 16:08:59 - "POST /api/project/ckeditor/imageupload/ HTTP/1.1" 401 58
+[WARNING] 19/Apr/2025 16:08:59 - "POST /api/project/ckeditor/imageupload/ HTTP/1.1" 401 58
+[WARNING] 19/Apr/2025 16:09:19 - Unauthorized: /api/project/ckeditor/imageupload/
+[WARNING] 19/Apr/2025 16:09:19 - Unauthorized: /api/project/ckeditor/imageupload/
+[WARNING] 19/Apr/2025 16:09:19 - "POST /api/project/ckeditor/imageupload/ HTTP/1.1" 401 58
+[WARNING] 19/Apr/2025 16:09:19 - "POST /api/project/ckeditor/imageupload/ HTTP/1.1" 401 58
+[WARNING] 19/Apr/2025 16:09:20 - Unauthorized: /api/project/ckeditor/imageupload/
+[WARNING] 19/Apr/2025 16:09:20 - Unauthorized: /api/project/ckeditor/imageupload/
+[WARNING] 19/Apr/2025 16:09:20 - "POST /api/project/ckeditor/imageupload/ HTTP/1.1" 401 58
+[WARNING] 19/Apr/2025 16:09:20 - "POST /api/project/ckeditor/imageupload/ HTTP/1.1" 401 58

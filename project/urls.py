@@ -1,24 +1,9 @@
 from django.urls import path
 from .views import project, retest, vulnerability, image_upload, scope
 from .views.image_upload import GetImageView
-#from project.views.workorder import WorkOrderViewSet, print_workorder  
-from rest_framework.routers import DefaultRouter
-
-# # WorkOrder Views for manual routing
-# workorder_list = WorkOrderViewSet.as_view({
-#     'get': 'list',
-#     'post': 'create'
-# })
-# workorder_detail = WorkOrderViewSet.as_view({
-#     'get': 'retrieve',
-#     'put': 'update',
-#     'patch': 'partial_update',
-#     'delete': 'destroy'
-# })
 
 urlpatterns = [
-
-    ## Project
+    # ===== Project =====
     path('edit-project/<str:pk>/', project.project_edit),
     path('get-projects/', project.GetAllProjects.as_view()),
     path('my-projects/', project.GetMyProjects.as_view()),
@@ -31,24 +16,19 @@ urlpatterns = [
     path('status/reopen/<str:pk>/', project.reopen_project_status),
     path('report/<str:pk>/', project.project_report, name="generate report"),
 
-    ## WorkOrder (NEW)
-    # path('workorder/', workorder_list, name='workorder-list'),
-    # path('workorder/<int:pk>/', workorder_detail, name='workorder-detail'),
-    # path('workorder/<int:pk>/print/', print_workorder, name='print_workorder'),
-
-    # Scope
+    # ===== Scope =====
     path('scope/add/<str:pk>/', scope.projectaddscope, name="Add Project Scope"),
     path('scope/delete/', scope.deleteprojectscope),
     path('scope/edit/<str:pk>/', scope.projectscopedit),
     path('scope/<str:pk>/', scope.getprojectscopes),
 
-    ## Retest
+    # ===== Retest =====
     path('Retest/<str:pk>/', retest.RetestList),
     path('Retest/add', retest.Retestadd),
     path('Retest/delete/<str:pk>/', retest.Retestdelete),
     path('retest/status/completed/<str:pk>/', retest.complete_retest_status),
 
-    # Project Vulnerability
+    # ===== Vulnerability =====
     path('findings/<str:pk>/', vulnerability.projectfindingview),
     path('vulnerability/<str:pk>/', vulnerability.projectvulnview),
     path('vulnerability/status/vulnerability/<str:pk>/', vulnerability.projectvulnerabilitystatus),
@@ -58,7 +38,7 @@ urlpatterns = [
     path('vulnerability/Nessus/csv/<str:pk>/', vulnerability.Nessus_CSV),
     path('vulnerability/view/<str:pk>/', vulnerability.vulnerability_view),
 
-    # Vulnerability Instances
+    # ===== Vulnerability Instances =====
     path('vulnerability/instances/<str:pk>/', vulnerability.projectvulninstances),
     path('vulnerability/instances/filter/<str:pk>/', vulnerability.projectvulninstances_filter),
     path('vulnerability/add/instances/<str:pk>/', vulnerability.projectaddinstances),
@@ -66,8 +46,8 @@ urlpatterns = [
     path('vulnerability/delete/instances/', vulnerability.projectdeleteinstances),
     path('vulnerability/status/instances/', vulnerability.projectinstancesstatus),
 
-    # images
-    path('ckeditor/imageupload/', image_upload.ImageUploadView.as_view(),),
+    # ===== Image Uploads (CKEditor) =====
+    path('ckeditor/imageupload/', image_upload.ImageUploadView.as_view()),
     path('ckeditor/delete-images/', image_upload.delete_images, name='delete_images'),
     path('getimage/', GetImageView.as_view(), name='get_image'),
 ]

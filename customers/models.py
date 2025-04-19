@@ -20,10 +20,11 @@ class Company(models.Model):
         ('inf_communication', 'Information and Communication Technology'),
     ]
 
-    name = models.CharField(max_length=300, unique=True)
+    audit_organisation_name = models.CharField(max_length=300, blank=True, null=True)
     img = models.ImageField(upload_to='company')
     address = models.TextField()
     internal = models.BooleanField(default=False)
+    name = models.CharField(max_length=255)
 
     
     hash_value = models.CharField(max_length=100, blank=True, null=True)

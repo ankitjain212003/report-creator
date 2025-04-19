@@ -72,7 +72,7 @@ class Project(models.Model):
     contact_person_name = models.CharField(max_length=100, blank=True, null=True)
     contact_person_phone = models.CharField(max_length=15, blank=True, null=True)
     contact_person_email = models.EmailField(blank=True, null=True)
-    audit_organisation_name = models.ForeignKey(Company, on_delete=models.SET_NULL, blank=True, null=True, related_name='audit_projects')
+    audit_organisation_name = models.CharField(max_length=300, blank=True, null=True)
     website_detail = models.ForeignKey('PrjectScope', on_delete=models.SET_NULL, blank=True, null=True, related_name='website_projects')
     
 

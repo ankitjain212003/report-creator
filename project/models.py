@@ -40,7 +40,7 @@ AUDIT_TYPE_CHOICES = [
 ]
 AUDIT_MODE_CHOICES = [
     ('on_site', 'On Site'),
-    ('office', 'Office'),
+    ('office', 'Office')
 ]
 
 class Project(models.Model):
@@ -65,14 +65,14 @@ class Project(models.Model):
     null=False,
     blank=False
 )
-
+   
     projectexception = models.TextField(null=True, blank=True, validators=[xss_validator])
     owner = models.ManyToManyField(CustomUser, blank=True)
     status = models.CharField(max_length=20, choices=PROJECT_STATUS_CHOICES)
     contact_person_name = models.CharField(max_length=100, blank=True, null=True)
     contact_person_phone = models.CharField(max_length=15, blank=True, null=True)
     contact_person_email = models.EmailField(blank=True, null=True)
-    audit_organisation_name = models.CharField(max_length=300, blank=True, null=True)
+    audit_organisation_name = models.ForeignKey(Company, on_delete=models.SET_NULL, blank=True, null=True, related_name='audit_projects')
     website_detail = models.ForeignKey('PrjectScope', on_delete=models.SET_NULL, blank=True, null=True, related_name='website_projects')
     
 

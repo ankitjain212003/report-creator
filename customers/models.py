@@ -20,7 +20,7 @@ class Company(models.Model):
         ('inf_communication', 'Information and Communication Technology'),
     ]
 
-    audit_organisation_name = models.CharField(max_length=300, blank=True, null=True)
+   
     img = models.ImageField(upload_to='company')
     address = models.TextField()
     internal = models.BooleanField(default=False)

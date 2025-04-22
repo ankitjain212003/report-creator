@@ -109,7 +109,7 @@ def generate_vulnerability_document(pk,Report_type,standard):
         doc.render(context,jinja_env)
         doc = main_doc_style(doc)
         response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.wordprocessingml.document')
-        response['Content-Disposition'] = f'attachment; filename={project.name}vulnerability_report.docx'
+        response['Content-Disposition'] = f'attachment; filename={project.Projectname}vulnerability_report.docx'
         doc.save(response)
         return response
     

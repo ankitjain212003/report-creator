@@ -22,7 +22,7 @@ class Company(models.Model):
         ('inf_communication', 'Information and Communication Technology'),
     ]
 
-   
+
     img = models.ImageField(upload_to='company')
     address = models.TextField()
     internal = models.BooleanField(default=False)

@@ -1,7 +1,5 @@
 from django.db import models
 
-from project.models import Project
-
 class Company(models.Model):
     CATEGORY_CHOICES = [
         ('central_ministry', 'Central Ministry/Department'),
@@ -22,11 +20,11 @@ class Company(models.Model):
         ('inf_communication', 'Information and Communication Technology'),
     ]
 
-
+   
     img = models.ImageField(upload_to='company')
     address = models.TextField()
     internal = models.BooleanField(default=False)
-   
+    name = models.CharField(max_length=255 ,default='Unnamed Company')
 
     
     hash_value = models.CharField(max_length=100, blank=True, null=True)

@@ -5,7 +5,6 @@ from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
 
 # Local imports
-from customers.models import Company
 from accounts.models import CustomUser
 from utils.validators import xss_validator
 
@@ -21,10 +20,10 @@ STATUS_CHOICES = [
 ]
 
 PROJECT_STATUS_CHOICES = [
-    ('Upcoming', 'Upcoming'),
-    ('In Progress', 'In Progress'),
-    ('Delay', 'Delay'),
-    ('Completed', 'Completed'),
+    ('L1 Report sent', 'Upcoming'),
+    ('L2 Report sent', 'In Progress'),
+    ('Final Report sent', 'Delay'),
+    ('Completed sent', 'Completed'),
 ]
 
 AUDIT_TYPE_CHOICES = [
@@ -45,7 +44,7 @@ AUDIT_MODE_CHOICES = [
 
 class Project(models.Model):
     name = models.CharField(max_length=100, unique=False, null=False, blank=False, default=None)
-    companyname = models.ForeignKey(Company, on_delete=models.CASCADE, editable=False, blank=True, null=True)
+   
     description = models.TextField(null=False, blank=False, default=None, validators=[xss_validator])
     projecttype = models.CharField(max_length=100, null=False, blank=False, default=None)
     audit_type = models.CharField(max_length=50, choices=AUDIT_TYPE_CHOICES, blank=True, null=True)
@@ -53,15 +52,15 @@ class Project(models.Model):
     startdate = models.DateField(default=timezone.now)
     enddate = models.DateField(null=True, blank=True)
     TESTING_TYPE_CHOICES = [
-    ("White Box", "White Box"),
-    ("Black Box", "Black Box"),
-    ("Grey Box", "Grey Box"),
+    ("Level1", "Level1"),
+    ("Level2", "Level2"),
+    ("Final Report", "Final Report"),
 ]
 
     testingtype = models.CharField(
     max_length=100,
     choices=TESTING_TYPE_CHOICES,
-    default="White Box",
+    default="Level1",
     null=False,
     blank=False
 )
@@ -72,7 +71,7 @@ class Project(models.Model):
     contact_person_name = models.CharField(max_length=100, blank=True, null=True)
     contact_person_phone = models.CharField(max_length=15, blank=True, null=True)
     contact_person_email = models.EmailField(blank=True, null=True)
-    audit_organisation_name = models.ForeignKey(Company, on_delete=models.SET_NULL, blank=True, null=True, related_name='audit_projects')
+    audit_organisation_name = models.CharField(max_length=15, blank=True, null=True)
     website_detail = models.ForeignKey('PrjectScope', on_delete=models.SET_NULL, blank=True, null=True, related_name='website_projects')
     verify_by = models.ForeignKey(CustomUser, on_delete=models.SET_NULL, blank=True, null=True, related_name='verified_projects')
 

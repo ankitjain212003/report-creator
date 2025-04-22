@@ -72,8 +72,8 @@ class Project(models.Model):
     contact_person_phone = models.CharField(max_length=15, blank=True, null=True)
     contact_person_email = models.EmailField(blank=True, null=True)
     audit_organisation_name = models.CharField(max_length=15, blank=True, null=True)
-    website_detail = models.ForeignKey('PrjectScope', on_delete=models.SET_NULL, blank=True, null=True, related_name='website_projects')
-    verify_by = models.ForeignKey(CustomUser, on_delete=models.SET_NULL, blank=True, null=True, related_name='verified_projects')
+    # website_detail = models.ForeignKey(Projectsope, on_delete=models.SET_NULL, blank=True, null=True, related_name='website_projects')
+    # verify_by = models.ForeignKey(CustomUser, on_delete=models.SET_NULL, blank=True, null=True, related_name='verified_projects')
 
        
 

@@ -75,6 +75,10 @@ class Project(models.Model):
     website_detail = models.ForeignKey('PrjectScope', on_delete=models.SET_NULL, blank=True, null=True, related_name='website_projects')
     verify_by = models.ForeignKey(CustomUser, on_delete=models.SET_NULL, blank=True, null=True, related_name='verified_projects')
 
+       
+
+    def __str__(self):
+           return self.name
     def clean(self):
         if self.enddate and self.enddate < self.startdate:
             raise ValidationError(_('End date cannot be earlier than start date'))

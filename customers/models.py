@@ -26,7 +26,13 @@ class Company(models.Model):
     img = models.ImageField(upload_to='company')
     address = models.TextField()
     internal = models.BooleanField(default=False)
-    name =  models.ForeignKey(Project, on_delete=models.SET_NULL, blank=True, null=True, related_name='audit_projects')
+    name = models.ForeignKey(
+        Project,
+        on_delete=models.SET_NULL,
+        blank=True,
+        null=True,
+        related_name='companies'
+    )
 
     
     hash_value = models.CharField(max_length=100, blank=True, null=True)

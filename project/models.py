@@ -78,7 +78,7 @@ class Project(models.Model):
        
 
     def __str__(self):
-           return self.name
+           return self.Projectname
     def clean(self):
         if self.enddate and self.enddate < self.startdate:
             raise ValidationError(_('End date cannot be earlier than start date'))

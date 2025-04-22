@@ -6,6 +6,7 @@ from django.utils.translation import gettext_lazy as _
 
 # Local imports
 from accounts.models import CustomUser
+from customers.models import Company
 from utils.validators import xss_validator
 
 # Constants
@@ -44,7 +45,7 @@ AUDIT_MODE_CHOICES = [
 
 class Project(models.Model):
     Projectname = models.CharField(max_length=100, unique=False, null=True, blank=False, default=None)
-   
+    companyname = models.ForeignKey(Company, on_delete=models.CASCADE,editable=False,blank=True,null=True)
     description = models.TextField(null=False, blank=False, default=None, validators=[xss_validator])
     projecttype = models.CharField(max_length=100, null=False, blank=False, default=None)
     audit_type = models.CharField(max_length=50, choices=AUDIT_TYPE_CHOICES, blank=True, null=True)

@@ -1147,3 +1147,7 @@ django.template.exceptions.TemplateDoesNotExist: index.html
 [WARNING] 22/Apr/2025 14:43:19 - Not Found: /api/project/ get-projects/
 [WARNING] 22/Apr/2025 14:43:19 - "GET /api/project/%20get-projects/ HTTP/1.1" 404 28180
 [WARNING] 22/Apr/2025 14:43:19 - "GET /api/project/%20get-projects/ HTTP/1.1" 404 28180
+[WARNING] 22/Apr/2025 14:46:08 - Not Found: /api/project/ get-projects/
+[WARNING] 22/Apr/2025 14:46:08 - Not Found: /api/project/ get-projects/
+[WARNING] 22/Apr/2025 14:46:08 - "GET /api/project/%20get-projects/ HTTP/1.1" 404 28180
+[WARNING] 22/Apr/2025 14:46:08 - "GET /api/project/%20get-projects/ HTTP/1.1" 404 28180

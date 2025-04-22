@@ -31,7 +31,7 @@ class Company(models.Model):
         on_delete=models.SET_NULL,
         blank=True,
         null=True,
-        related_name='companies'
+        related_name='projectname'
     )
 
     

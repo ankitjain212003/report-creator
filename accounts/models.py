@@ -50,6 +50,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     date_joined = models.DateTimeField(auto_now_add=True)
     company = models.ForeignKey('customers.Company', on_delete=models.CASCADE, editable=False, null=True, blank=True)
     position = models.CharField(max_length=100, blank=True, null=True)
+    Qualifications = models.CharField(max_length=150, blank=True)
     groups = models.ManyToManyField(
         CustomGroup,
         verbose_name=('groups'),

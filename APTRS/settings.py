@@ -145,7 +145,7 @@ INTERNAL_IPS = [
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework_simplejwt.authentication.JWTAuthentication',
-        'accounts.authenticate.CustomAuthentication'
+        #'accounts.authenticate.CustomAuthentication'
     ],
     'DEFAULT_THROTTLE_CLASSES': [
         'rest_framework.throttling.AnonRateThrottle',

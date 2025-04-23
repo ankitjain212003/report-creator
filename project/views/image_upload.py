@@ -45,7 +45,7 @@ def delete_images(request):
 
 @method_decorator(csrf_exempt, name='dispatch')  # ✅ Disable CSRF if using JWT
 class ImageUploadView(APIView):
-    permission_classes = [IsAuthenticated, IsAdminUser]
+   
     parser_classes = [MultiPartParser]
 
     @custom_permission_required(['Manage Projects'])

@@ -122,7 +122,7 @@ class Vulnerability(models.Model):
     cvssvector = models.CharField(max_length=300, default=None, null=True)
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default=VULNERABLE)
     vulnerabilitydescription = models.TextField(blank=True, null=True, validators=[xss_validator])
-    POC = models.TextField(default=None, blank=True, null=True, validators=[xss_validator])
+    POC = models.TextField(default=None, blank=True, null=True)
     created = models.DateTimeField(auto_now_add=True, editable=False, null=True)
     vulnerabilitysolution = models.TextField(blank=True, null=True, validators=[xss_validator])
     vulnerabilityreferlnk = models.TextField(blank=True, null=True, validators=[xss_validator])

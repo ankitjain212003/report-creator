@@ -51,6 +51,7 @@ class ImageUploadView(APIView):
     def post(self, request):
         if not request.user or not request.user.is_authenticated:
             print("❌ Upload failed: User not authenticated")
+            
             return Response({"error": "Unauthorized"}, status=403)
 
         print(f"✅ Upload request by user: {request.user} (Admin: {request.user.is_staff})")

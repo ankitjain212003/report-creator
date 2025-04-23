@@ -41,34 +41,25 @@ def delete_images(request):
         'failed_images': failed_images
     }
     return Response(response_data)
-
-@method_decorator(csrf_exempt, name='dispatch')
 class ImageUploadView(APIView):
-    permission_classes = [IsAuthenticated]
-    parser_classes = [MultiPartParser]
+    permission_classes = [IsAuthenticated]  # ✅ This is CRUCIAL
 
-    @custom_permission_required(['Manage Projects'])
-    def post(self, request):
-        if not request.user or not request.user.is_authenticated:
-            print("❌ Upload failed: User not authenticated")
-            
-            return Response({"error": "Unauthorized"}, status=403)
+    def post(self, request, *args, **kwargs):
+        print("🔥 Upload request received")  # ✅ Should print now
 
-        print(f"✅ Upload request by user: {request.user} (Admin: {request.user.is_staff})")
+        file = request.FILES.get('upload')
+        if not file:
+            return Response({'error': 'No file provided'}, status=400)
 
-        serializer = ImageSerializer(data=request.data)
-        if serializer.is_valid():
-            image = serializer.validated_data['upload']
-            unique_filename = f"{uuid.uuid4()}{os.path.splitext(image.name)[1]}"
-            upload_path = os.path.join('poc', unique_filename)
-            default_storage.save(upload_path, image)
-            print(f"✅ Image saved as: {upload_path}")
-            return Response({"url": f"project/getimage/?filename={unique_filename}"})
-        else:
-            print("❌ Upload failed: Invalid image data")
-            print("❌ Serializer errors:", serializer.errors)
-            return Response(serializer.errors, status=400)
+        filename = f"{uuid.uuid4()}.{file.name.split('.')[-1]}"
+        filepath = os.path.join(settings.MEDIA_ROOT, 'ckeditor', filename)
+        os.makedirs(os.path.dirname(filepath), exist_ok=True)
 
+        with open(filepath, 'wb+') as f:
+            for chunk in file.chunks():
+                f.write(chunk)
+
+        return Response({'url': request.build_absolute_uri(f'/media/ckeditor/{filename}')})
 
 class GetImageView(APIView):
     permission_classes = [IsAuthenticated, IsAdminUser]

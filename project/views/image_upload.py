@@ -42,25 +42,30 @@ def delete_images(request):
     }
     return Response(response_data)
 
-
-@method_decorator(csrf_exempt, name='dispatch')  # ✅ Disable CSRF if using JWT
+@method_decorator(csrf_exempt, name='dispatch')
 class ImageUploadView(APIView):
-    
-   
+    permission_classes = [IsAuthenticated]
     parser_classes = [MultiPartParser]
-    @permission_classes([IsAuthenticated])
+
     @custom_permission_required(['Manage Projects'])
     def post(self, request):
+        if not request.user or not request.user.is_authenticated:
+            print("❌ Upload failed: User not authenticated")
+            return Response({"error": "Unauthorized"}, status=403)
+
+        print(f"✅ Upload request by user: {request.user} (Admin: {request.user.is_staff})")
+
         serializer = ImageSerializer(data=request.data)
         if serializer.is_valid():
-            print(request.user)
             image = serializer.validated_data['upload']
             unique_filename = f"{uuid.uuid4()}{os.path.splitext(image.name)[1]}"
             upload_path = os.path.join('poc', unique_filename)
             default_storage.save(upload_path, image)
-            response_data = {"url": f"project/getimage/?filename={unique_filename}"}
-            return Response(response_data)
+            print(f"✅ Image saved as: {upload_path}")
+            return Response({"url": f"project/getimage/?filename={unique_filename}"})
         else:
+            print("❌ Upload failed: Invalid image data")
+            print("❌ Serializer errors:", serializer.errors)
             return Response(serializer.errors, status=400)
 
 

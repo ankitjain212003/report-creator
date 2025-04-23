@@ -27,7 +27,7 @@ class TagValidator(HTMLParser):
             if attr.lower() == 'src':
                 if value is None:
                     raise ValidationError(_("Image source cannot be None"))
-                if not value.startswith(self.allowed_path):
+                if not any(value.startswith(prefix) for prefix in self.allowed_paths):
                     self.disallowed_imgs.append(value)
 
     def validate_link_src(self, attrs):

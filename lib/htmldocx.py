@@ -16,6 +16,7 @@ Original : https://github.com/pqzx/html2docx
 Modified : https://github.com/APTRS/html2docx
 The lib is modified to add support for more tags required for APTRS project
 """
+import logging
 import re, argparse
 import io, os
 import urllib.request
@@ -309,36 +310,40 @@ class HtmlToDocx(HTMLParser):
         run.add_picture(image)
 
     def handle_img(self, current_attrs):
-        if not self.include_images:
-            self.skip = True
-            self.skip_tag = 'img'
-            return
-        src = current_attrs['src']
-        # fetch image
-        src_is_url = True #is_url(self.base_url + src) APTRS does not support local images
-        if src_is_url:
-            try:
-                image = fetch_image(src,self.headers, self.base_url)
-            except urllib.error.URLError:
-                image = None
-        else:
-            image = src
-        # add image to doc
-        if image:
-            try:
-                if isinstance(self.doc, docx.document.Document):
-                    self.doc.add_picture(image,width=Inches(6.69291), height=Inches(4.2244094))
-                else:
-                    self.add_image_to_cell(self.doc, image)
-            except FileNotFoundError:
-                image = None
-        if not image:
-            if src_is_url:
-                self.doc.add_paragraph("<image: %s>" % src)
+     if not self.include_images:
+        self.skip = True
+        self.skip_tag = 'img'
+        return
+
+    # ✅ FIX: Convert to dict if it's a list of tuples
+     if isinstance(current_attrs, list):
+        current_attrs = dict(current_attrs)
+
+     src = current_attrs.get('src')
+     if not src:
+         logging.warning(f"[SKIPPED] <img> tag missing 'src': {current_attrs}")
+     return
+
+    # APTRS doesn't support local image embedding
+    src_is_url = True
+
+    try:
+        image = fetch_image(src, self.headers, self.base_url)
+    except Exception as e:
+        logging.warning(f"[FAILED] Image fetch error from {src}: {e}")
+        image = None
+
+    if image:
+        try:
+            if isinstance(self.doc, docx.document.Document):
+                self.doc.add_picture(image, width=Inches(6.69), height=Inches(4.22))
             else:
-                # avoid exposing filepaths in document
-                self.doc.add_paragraph("<image: %s>" % get_filename_from_url(src))
-        # add styles?
+                self.add_image_to_cell(self.doc, image)
+        except Exception as e:
+            logging.warning(f"[ERROR] Failed to insert image into document: {e}")
+    else:
+        fallback = get_filename_from_url(src)
+        self.doc.add_paragraph(f"<image: {fallback}>")
 
     def handle_table(self):
         """

@@ -10,9 +10,9 @@ from docxtpl import InlineImage
 ALLOWED_TAGS = settings.ALLOWED_TAGS
 
 class TagValidator(HTMLParser):
-    def __init__(self, allowed_path='/api/project/getimage/?filename='):
+    def __init__(self):
         super().__init__()
-        self.allowed_path = allowed_path
+        self.allowed_paths = ['/api/project/getimage/?filename=', '/media/ckeditor/']
         self.disallowed_tags = set()
         self.disallowed_imgs = []
 

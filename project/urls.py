@@ -1,7 +1,8 @@
 from django.urls import path
 from .views import project, retest, vulnerability, image_upload, scope
 from .views.image_upload import GetImageView
-
+from ckeditor_uploader import views as ck_views
+from django.views.decorators.csrf import csrf_exempt
 urlpatterns = [
     # ===== Project =====
     path('edit-project/<str:pk>/', project.project_edit),
@@ -47,7 +48,7 @@ urlpatterns = [
     path('vulnerability/status/instances/', vulnerability.projectinstancesstatus),
 
     # ===== Image Uploads (CKEditor) =====
-    path('ckeditor/imageupload/', image_upload.ImageUploadView.as_view()),
+    path('ckeditor/imageupload/' , csrf_exempt(image_upload.ImageUploadView.as_view())),
     path('ckeditor/delete-images/', image_upload.delete_images, name='delete_images'),
     path('getimage/', GetImageView.as_view(), name='get_image'),
 ]

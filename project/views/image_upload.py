@@ -52,6 +52,7 @@ class ImageUploadView(APIView):
     def post(self, request):
         serializer = ImageSerializer(data=request.data)
         if serializer.is_valid():
+            print(request.user)
             image = serializer.validated_data['upload']
             unique_filename = f"{uuid.uuid4()}{os.path.splitext(image.name)[1]}"
             upload_path = os.path.join('poc', unique_filename)

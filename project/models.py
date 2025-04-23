@@ -47,7 +47,7 @@ class Project(models.Model):
     Projectname = models.CharField(max_length=100, unique=False, null=True, blank=False, default=None)
     companyname = models.ForeignKey(Company, on_delete=models.CASCADE,editable=False,blank=True,null=True)
     description = models.TextField(null=False, blank=False, default=None, validators=[xss_validator])
-    projecttype = models.CharField(max_length=100, null=False, blank=False, default=None)
+   
     audit_type = models.CharField(max_length=50, choices=AUDIT_TYPE_CHOICES, blank=True, null=True)
     audit_mode = models.CharField(max_length=20, choices=AUDIT_MODE_CHOICES, blank=True, null=True)
     startdate = models.DateField(default=timezone.now)
@@ -72,7 +72,7 @@ class Project(models.Model):
     contact_person_name = models.CharField(max_length=100, blank=True, null=True)
     contact_person_phone = models.CharField(max_length=15, blank=True, null=True)
     contact_person_email = models.EmailField(blank=True, null=True)
-    audit_organisation_name = models.CharField(max_length=15, blank=True, null=True)
+   
     # website_detail = models.ForeignKey(Projectsope, on_delete=models.SET_NULL, blank=True, null=True, related_name='website_projects')
     # verify_by = models.ForeignKey(CustomUser, on_delete=models.SET_NULL, blank=True, null=True, related_name='verified_projects')
 

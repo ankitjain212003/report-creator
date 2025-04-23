@@ -21,7 +21,7 @@ class Company(models.Model):
     ]
 
    
-    img = models.ImageField(upload_to='company')
+  
     address = models.TextField()
     internal = models.BooleanField(default=False)
     name = models.CharField(max_length=300,unique = True)

@@ -21,10 +21,10 @@ STATUS_CHOICES = [
 ]
 
 PROJECT_STATUS_CHOICES = [
-    ('L1 Report sent', 'Upcoming'),
-    ('L2 Report sent', 'In Progress'),
-    ('Final Report sent', 'Delay'),
-    ('Completed sent', 'Completed'),
+    ('L1 Report sent', 'L1 Report sent'),
+    ('L2 Report sent', 'L2 Report sent'),
+    ('Final Report sent', 'Final Report sent'),
+    ('Completed sent', 'Completed sent'),
 ]
 
 AUDIT_TYPE_CHOICES = [

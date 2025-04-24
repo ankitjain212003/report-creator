@@ -64,7 +64,7 @@ def fetch_image(url, headers, base_url):
     :return:
     """
     requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
-    full_url = base_url + url
+    full_url = base_url.rstrip("/") + "/" + url.lstrip("/")
     headers = {
         "Authorization": f"Bearer {headers}"
     }

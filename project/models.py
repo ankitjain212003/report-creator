@@ -44,8 +44,8 @@ AUDIT_MODE_CHOICES = [
 ]
 
 class Project(models.Model):
-    Projectname = models.CharField(max_length=100, unique=False, null=True, blank=False, default=None)
-   
+  
+    companyname = models.ForeignKey(Company, on_delete=models.CASCADE,editable=False,blank=True,null=True)
     description = models.TextField(null=False, blank=False, default=None, validators=[xss_validator])
    
     audit_type = models.CharField(max_length=50, choices=AUDIT_TYPE_CHOICES, blank=True, null=True)
@@ -66,7 +66,7 @@ class Project(models.Model):
     blank=False
 )
    
-    project_expected_output = models.TextField(null=True, blank=True, validators=[xss_validator])
+    projectexception = models.TextField(null=True, blank=True, validators=[xss_validator])
     owner = models.ManyToManyField(CustomUser, blank=True)
     status = models.CharField(max_length=20, choices=PROJECT_STATUS_CHOICES)
     contact_person_name = models.CharField(max_length=100, blank=True, null=True)

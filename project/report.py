@@ -39,6 +39,12 @@ token = None
 def CheckReport(Report_format,Report_type,pk,url,standard,request,access_token):
     global base_url
     base_url = url
+
+    if not url.startswith("http://") and not url.startswith("https://"):
+        url = "https://" + url
+    base_url = url.rstrip("/")  # Remove any trailing slash
+
+
     if Report_format == "excel":
         response =  CreateExcel(pk)
 

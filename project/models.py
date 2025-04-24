@@ -44,7 +44,7 @@ AUDIT_MODE_CHOICES = [
 ]
 
 class Project(models.Model):
-  
+    Projectname = models.CharField(max_length=100, unique=False, null=True, blank=False, default=None)
     companyname = models.ForeignKey(Company, on_delete=models.CASCADE,editable=False,blank=True,null=True)
     description = models.TextField(null=False, blank=False, default=None, validators=[xss_validator])
    

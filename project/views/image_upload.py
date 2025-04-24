@@ -59,7 +59,8 @@ class ImageUploadView(APIView):
             for chunk in file.chunks():
                 f.write(chunk)
 
-        return Response({'url': request.build_absolute_uri(f'/media/ckeditor/{filename}')})
+        return Response({'url': f'{request.scheme}://{request.get_host()}/media/ckeditor/{filename}'})
+
 
 class GetImageView(APIView):
     permission_classes = [IsAuthenticated, IsAdminUser]

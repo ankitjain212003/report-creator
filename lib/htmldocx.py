@@ -55,24 +55,29 @@ def is_url(url):
     parts = urlparse(url)
     print(all([parts.scheme, parts.netloc, parts.path]))
     return all([parts.scheme, parts.netloc, parts.path])
-
 def fetch_image(url, headers, base_url):
     """
-    Attempts to fetch an image from a url. 
+    Attempts to fetch an image from a url.
     If successful returns a bytes object, else returns None
-
-    :return:
     """
     requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
-    full_url = base_url + url
+
+    # ✅ FIX malformed URLs
+    if url.startswith('http://') or url.startswith('https://'):
+        full_url = url
+    else:
+        full_url = base_url.rstrip('/') + '/' + url.lstrip('/')
+
     headers = {
         "Authorization": f"Bearer {headers}"
     }
-    response = requests.get(full_url, headers=headers,verify=False)
+
+    response = requests.get(full_url, headers=headers, verify=False)
     if response.status_code == 200:
         return io.BytesIO(response.content)
     else:
         return None
+
 
 def remove_last_occurence(ls, x):
     ls.pop(len(ls) - ls[::-1].index(x) - 1)

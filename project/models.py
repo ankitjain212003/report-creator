@@ -43,9 +43,31 @@ AUDIT_MODE_CHOICES = [
     ('office', 'Office')
 ]
 
+CATEGORY_CHOICES = [
+        ('central_ministry', 'Central Ministry/Department'),
+        ('govt_org', 'Organisation under Government Development'),
+        ('private_sector', 'Private Sector'),
+        ('public_sector', 'Public Sector'),
+        ('state_govt', 'State Government Department'),
+    ]
+
+SECTOR_CHOICES = [
+        ('agriculture', 'Agriculture'),
+        ('defence', 'Defence'),
+        ('education', 'Education'),
+        ('energy', 'Energy'),
+        ('finance', 'Finance'),
+        ('healthcare', 'Healthcare'),
+        ('inf_broadcasting', 'Information and Broadcasting'),
+        ('inf_communication', 'Information and Communication Technology'),
+    ]
+
+
 class Project(models.Model):
     Projectname = models.CharField(max_length=100, unique=False, null=True, blank=False, default=None)
     companyname = models.ForeignKey(Company, on_delete=models.CASCADE,editable=False,blank=True,null=True)
+    category = models.CharField(max_length=50, choices=CATEGORY_CHOICES, blank=True, null=True)
+    sector = models.CharField(max_length=50, choices=SECTOR_CHOICES, blank=True, null=True)
     description = models.TextField(null=False, blank=False, default=None, validators=[xss_validator])
    
     audit_type = models.CharField(max_length=50, choices=AUDIT_TYPE_CHOICES, blank=True, null=True)
@@ -71,10 +93,8 @@ class Project(models.Model):
     status = models.CharField(max_length=20, choices=PROJECT_STATUS_CHOICES)
     contact_person_name = models.CharField(max_length=100, blank=True, null=True)
     contact_person_phone = models.CharField(max_length=15, blank=True, null=True)
-    contact_person_email = models.EmailField(blank=True, null=True)
-   
-    # website_detail = models.ForeignKey(Projectsope, on_delete=models.SET_NULL, blank=True, null=True, related_name='website_projects')
-    # verify_by = models.ForeignKey(CustomUser, on_delete=models.SET_NULL, blank=True, null=True, related_name='verified_projects')
+    contact_person_email = models.EmailField(blank=True, null=True)  
+    verify_by = models.ForeignKey(CustomUser, on_delete=models.SET_NULL, blank=True, null=True, related_name='fullname')
 
        
 

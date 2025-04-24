@@ -16,6 +16,7 @@ Original : https://github.com/pqzx/html2docx
 Modified : https://github.com/APTRS/html2docx
 The lib is modified to add support for more tags required for APTRS project
 """
+from urllib.parse import urljoin
 import re, argparse
 import io, os
 import urllib.request
@@ -64,7 +65,7 @@ def fetch_image(url, headers, base_url):
     :return:
     """
     requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
-    full_url = base_url + url
+    full_url = urljoin(base_url + '/', url)
     headers = {
         "Authorization": f"Bearer {headers}"
     }

@@ -55,35 +55,24 @@ def is_url(url):
     parts = urlparse(url)
     print(all([parts.scheme, parts.netloc, parts.path]))
     return all([parts.scheme, parts.netloc, parts.path])
-dfrom urllib.parse import urljoin
 
 def fetch_image(url, headers, base_url):
-    import requests
-    import io
-    from requests.packages.urllib3.exceptions import InsecureRequestWarning
+    """
+    Attempts to fetch an image from a url. 
+    If successful returns a bytes object, else returns None
 
+    :return:
+    """
     requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
-
-    # ✅ Safely build the full image URL
-    full_url = urljoin(base_url, url)
-
-    try:
-        response = requests.get(
-            full_url,
-            headers={"Authorization": f"Bearer {headers}"},
-            verify=False,
-            timeout=5  # 🔐 avoid worker hang
-        )
-        if response.status_code == 200:
-            return io.BytesIO(response.content)
-        else:
-            print(f"⚠️ Failed to fetch image: {response.status_code} - {full_url}")
-            return None
-    except Exception as e:
-        print(f"❌ Error fetching image: {e}")
+    full_url = base_url + url
+    headers = {
+        "Authorization": f"Bearer {headers}"
+    }
+    response = requests.get(full_url, headers=headers,verify=False)
+    if response.status_code == 200:
+        return io.BytesIO(response.content)
+    else:
         return None
-
-
 
 def remove_last_occurence(ls, x):
     ls.pop(len(ls) - ls[::-1].index(x) - 1)

@@ -1,37 +1,39 @@
 import logging
 import os
-from django.conf import settings
-from rest_framework.decorators import (api_view, permission_classes) # type: ignore
-from rest_framework.parsers import MultiPartParser
-from rest_framework.permissions import IsAuthenticated,IsAdminUser
-from rest_framework.response import Response
-from rest_framework.views import APIView
-from utils.permissions import custom_permission_required
-from ..serializers import (ImageSerializer)
-from django.core.files.storage import default_storage # type: ignore
 import uuid
+from django.conf import settings
+from django.views.decorators.csrf import csrf_exempt
+from django.utils.decorators import method_decorator
+from django.core.files.storage import default_storage
 from django.http import HttpResponse, Http404
+from rest_framework.parsers import MultiPartParser
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework.permissions import IsAuthenticated, IsAdminUser
+from rest_framework.decorators import api_view, permission_classes
+from ..serializers import ImageSerializer
+from utils.permissions import custom_permission_required
 import boto3
 from botocore.exceptions import NoCredentialsError, PartialCredentialsError
 
 logger = logging.getLogger(__name__)
 
-@api_view(['DELETE'])
-@permission_classes([IsAuthenticated,IsAdminUser])
-def delete_images(request):
 
+@api_view(['DELETE'])
+@permission_classes([IsAuthenticated, IsAdminUser])
+def delete_images(request):
     image_paths = request.data
     deleted_images = []
     failed_images = []
     for path in image_paths:
         path = os.path.basename(path)
-        fullimage_path =  os.path.normpat(os.path.join(settings.CKEDITOR_UPLOAD_LOCATION, path))
+        fullimage_path = os.path.normpath(os.path.join(settings.CKEDITOR_UPLOAD_LOCATION, path))
         if fullimage_path.startswith(settings.CKEDITOR_UPLOAD_LOCATION):
             try:
                 os.remove(fullimage_path)
-                deleted_images.append(image_paths)
+                deleted_images.append(path)
             except FileNotFoundError:
-                failed_images.append(image_paths)
+                failed_images.append(path)
         else:
             return Response({'message': 'Error, Invalid Image path provided'})
     response_data = {
@@ -39,30 +41,30 @@ def delete_images(request):
         'failed_images': failed_images
     }
     return Response(response_data)
-
 class ImageUploadView(APIView):
-    permission_classes = [IsAuthenticated, IsAdminUser]
-    parser_classes = [MultiPartParser]
+    permission_classes = [IsAuthenticated]  # ✅ This is CRUCIAL
 
-    @custom_permission_required(['Manage Projects'])
-    def post(self, request):
-        serializer = ImageSerializer(data=request.data)
-        if serializer.is_valid():
-            image = serializer.validated_data['upload']
-            unique_filename = f"{uuid.uuid4()}{os.path.splitext(image.name)[1]}"
-            upload_path = os.path.join('poc', unique_filename)
-            default_storage.save(upload_path, image)
-            response_data = {"url": f"project/getimage/?filename={unique_filename}"}
-            return Response(response_data)
-        else:
-            return Response(serializer.errors, status=400)
+    def post(self, request, *args, **kwargs):
+        print("🔥 Upload request received")  # ✅ Should print now
 
+        file = request.FILES.get('upload')
+        if not file:
+            return Response({'error': 'No file provided'}, status=400)
 
+        filename = f"{uuid.uuid4()}.{file.name.split('.')[-1]}"
+        filepath = os.path.join(settings.MEDIA_ROOT, 'ckeditor', filename)
+        os.makedirs(os.path.dirname(filepath), exist_ok=True)
 
+        with open(filepath, 'wb+') as f:
+            for chunk in file.chunks():
+                f.write(chunk)
+
+        return Response({'url': f'{request.scheme}://{request.get_host()}/media/ckeditor/{filename}'})
 
 
 class GetImageView(APIView):
     permission_classes = [IsAuthenticated, IsAdminUser]
+
     def get(self, request):
         filename = request.GET.get('filename')
         if not filename:

@@ -64,7 +64,9 @@ def fetch_image(url, headers, base_url):
 
     # ✅ FIX malformed URLs
     if url.startswith('http://') or url.startswith('https://'):
-        full_url = url
+       from urllib.parse import urljoin
+       full_url = urljoin(base_url, url)
+
     else:
         full_url = base_url.rstrip('/') + '/' + url.lstrip('/')
 

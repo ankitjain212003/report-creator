@@ -258,7 +258,8 @@ def project_report(request, pk):
         return Response({"message": "Project not found"}, status=status.HTTP_404_NOT_FOUND)
     
     #url = request.build_absolute_uri()
-    url = get_base_url(request)
+    url = f"{request.scheme}://{request.get_host()}"
+
     try:
         standard = request.query_params.getlist('Standard')
         if not standard:

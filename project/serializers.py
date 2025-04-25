@@ -24,6 +24,12 @@ class Projectserializers(serializers.ModelSerializer):
     status = serializers.CharField(read_only=True)
     owner = serializers.ListField(child=serializers.CharField(), write_only=True)
     companyname = serializers.CharField(write_only=True)
+    verify_by = serializers.SlugRelatedField(
+    slug_field='username',
+    queryset=CustomUser.objects.all(),
+    required=False,
+    allow_null=True
+)
 
     class Meta:
         model = Project

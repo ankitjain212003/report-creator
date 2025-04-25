@@ -39,7 +39,7 @@ def get_subdoc(doc, raw_html, headers, base_url):
 
         for style_name in ['Normal', 'List Bullet']:
             if style_name in temp_doc.styles:
-                temp_doc.styles[style_name].font.name = 'Calibri'
+                temp_doc.styles[style_name].font.name = 'Times New Roman'
 
         subdoc_tmp = io.BytesIO()
         temp_doc.save(subdoc_tmp)
@@ -53,8 +53,8 @@ def get_subdoc(doc, raw_html, headers, base_url):
 def main_doc_style(doc):
     try:
         font = doc.styles['List Bullet'].font if 'List Bullet' in doc.styles else doc.styles['Normal'].font
-        font.name = 'Calibri'
-        font.size = Pt(16)
+        font.name = 'Times New Roman'
+        font.size = Pt(14)
 
         # Use section[0] safely
         section = doc.sections[0]
